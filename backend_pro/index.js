@@ -5,7 +5,7 @@ const app = express();
 const format = require('date-format');
 //const { json } = require('express');
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 app.get('/', (req, res) => {
 
