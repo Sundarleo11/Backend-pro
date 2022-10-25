@@ -1,1 +1,32 @@
 openapi : 3.0.0
+info:
+     title: Social Media
+     description: This is a sample server for a socialmedia owner by Sundar
+     version: 1.0.0
+     
+servers: 
+- url: http://development/v1
+  description: Development server
+- url: https://staging/v1
+  description: Staging server
+- url: https://Production/v1
+  description: Production server    
+
+components:
+  securitySchemes:
+   BasicAuth:
+    type: http
+    scheme: basic  
+   BearerAuth:
+    type: http
+    scheme: bearer
+    
+
+
+  
+
+
+
+
+    
+   
