@@ -5,7 +5,7 @@ info:
      version: 1.0.0
      
 servers: 
-- url: http://development/v1
+- url: http://localhost:4000/api/v1/
   description: Development server
 - url: https://staging/v1
   description: Staging server
@@ -23,6 +23,63 @@ components:
     
 
 
+paths:
+ /insta:
+  get:
+    summary: return username, followers and follows
+    responses:
+     '200' : #status code
+      description: return  an object
+      content :
+       application/json:
+        schema:
+         type : object
+         properties :
+           username :
+              type: string
+           follower :
+              type: string
+           follows :
+              type: string           
+  post:
+    summary: return username, followers and follows
+    responses:
+     '200' : #status code
+      description: return  an object
+      content :
+       application/json:
+        schema:
+         type : object
+         properties :
+           username :
+              type: string
+           follower :
+              type: string
+           follows :
+              type: string 
+ /{token}:
+   get:
+    summary: return whatever is there in parameters
+    parameters :
+    - name : token
+      default : 5
+      in : path
+      schema :
+       type: string 
+    responses:
+     '200' : #status code
+      description: return  an object
+      content :
+        application/json:
+         schema:
+          type : object
+          properties:
+           params:
+             type: string 
+           
+
+
+    
   
 
 
